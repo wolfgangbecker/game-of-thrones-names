@@ -1,7 +1,6 @@
 sudo: false
 language: node_js
-cache: npm
-node_js: 6
+node_js: "6"
 branches:
   only:
     - master
@@ -9,3 +8,5 @@ notifications:
   email: false
 script:
   - npm run validate
+after_success:
+  - npm run report-coverage
